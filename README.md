@@ -1,7 +1,7 @@
 # Mgamer
 自作音ゲー、Mgamer(ミューゲーマー)です
 # ダウンロード
-for Android:
+for Android:https://github.com/Rinne-game/Mgamer/releases/tag/Mgamer_for_Android
 # 著作権違反をした場合のMgamerでの対応(該当楽曲の権利所持者向け)  
 該当楽曲を削除することを、上記の対応といたします。下記の製作者のメールアドレスにご連絡ください。  
 ※なお、実装楽曲の削除依頼は、楽曲の権利所持者であるとわかる場合のみ対応いたします。
