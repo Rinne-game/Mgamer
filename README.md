@@ -1,5 +1,5 @@
 # Mgamer
-スマートフォン/タブレット向け自作音ゲー、Mgamer(ミューゲーマー)です
+スマートフォン/タブレット端末向け自作音ゲー、Mgamer(ミューゲーマー)です
 # ダウンロード
 for Android:https://github.com/Rinne-game/Mgamer/releases/tag/Mgamer_for_Android  
 ※現在IOS版はございません。
