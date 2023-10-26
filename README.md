@@ -1,8 +1,8 @@
 # Mgamer
-自作音ゲー、Mgamer(ミューゲーマー)です
+スマートフォン/タブレット向け自作音ゲー、Mgamer(ミューゲーマー)です
 # ダウンロード
 for Android:https://github.com/Rinne-game/Mgamer/releases/tag/Mgamer_for_Android  
-※IOS版はございません。
+※現在IOS版はございません。
 # アプリのインストール方法
 Android版:APKファイルがダウンロードされます。ダウンロードされたAPKファイルをタップすると、インストールするかを聞かれますので、はいをタップします。
 # 上記のURLにてアップロードされているapkファイルのウイルスの危険性について
