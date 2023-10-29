@@ -3,6 +3,14 @@
 # ダウンロード
 for Android:https://github.com/Rinne-game/Mgamer/releases/tag/Mgamer_for_Android  
 ※現在IOS版はございません。
+# 動作要件
+動作保証端末  
+Android:Android 9.0(API level 28)以上のOSがダウンロードされている端末  
+RAM:95MB以上  
+推奨端末  
+Android:Android 11.0(API level 30)以上のOSがダウンロードされている端末  
+RAM:250MB以上
+推奨端末
 # アプリのインストール方法
 Android版:APKファイルがダウンロードされます。ダウンロードされたAPKファイルをタップすると、インストールするかを聞かれますので、はいをタップします。
 # 上記のURLにてアップロードされているapkファイルのウイルスの危険性について
