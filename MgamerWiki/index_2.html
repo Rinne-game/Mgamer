@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body {
+        background-color: #ff9500;
+    }
+
+    #headmain {
+        width: 600px;
+        margin: 0 auto;
+        background-color: #ff9500;
+        padding: 0 20px 20px 20px;
+        border: 5px solid black;
+    }
+
+    #bodymain {
+        width: 600px;
+        margin: 0 auto;
+        background-color: #ff9500;
+        padding: 0 20px 20px 20px;
+        border: 5px solid black;
+    }
+
+    #textmain {
+        line-height: 10%;
+    }
+
+    #frame {
+        width: 600px;
+        margin: 0 auto;
+        background-color: #ff9500;
+        padding: 0 20px 20px 20px;
+        border: 5px solid black;
+    }
+
+    .btn--orange,
+    a.btn--orange {
+        color: #fff;
+        background-color: #eb6100;
+    }
+
+    .btn--orange:hover,
+    a.btn--orange:hover {
+        color: #fff;
+        background: #f56500;
+    }
+
+    #example {
+        color: #ffffff;
+    }
+
+    input.netabare01_checkbox {
+        display: none;
+    }
+
+    label.netabare01_label {
+        display: inline;
+        position: relative;
+        background-color: #171717 !important;
+        color: #171717 !important;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    label.netabare01_label:before {
+        content: "クリックで内容を表示します";
+        display: block;
+        border: 1px solid #c70b0b;
+        font-size: 14px;
+        background-color: #ffeced;
+        color: #c70b0b;
+        position: absolute;
+        padding: 4px 10px;
+        z-index: 2;
+        right: 0;
+        left: 0;
+        bottom: calc(100% + 5px);
+        margin: auto;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        min-width: 200px;
+        text-align: center;
+        border-radius: 4px;
+        transition: 0.3s;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    label.netabare01_label:hover:before {
+        opacity: 1;
+    }
+
+    input.netabare01_checkbox:checked+label.netabare01_label {
+        color: #ffffff !important;
+    }
+
+    input.netabare01_checkbox:checked+label.netabare01_label:hover:before {
+        opacity: 0;
+    }
+
+    input.netabare02_checkbox {
+        display: none;
+    }
+
+    label.netabare02_label {
+        display: inline;
+        position: relative;
+        background-color: #171717 !important;
+        color: #171717 !important;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    label.netabare02_label:before {
+        content: "クリックで内容を表示します";
+        display: block;
+        border: 1px solid #c70b0b;
+        font-size: 14px;
+        background-color: #ffeced;
+        color: #c70b0b;
+        position: absolute;
+        padding: 4px 10px;
+        z-index: 2;
+        right: 0;
+        left: 0;
+        bottom: calc(100% + 5px);
+        margin: auto;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        min-width: 200px;
+        text-align: center;
+        border-radius: 4px;
+        transition: 0.3s;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    label.netabare02_label:hover:before {
+        opacity: 1;
+    }
+
+    input.netabare02_checkbox:checked+label.netabare01_label {
+        color: #ffffff !important;
+    }
+
+    input.netabare02_checkbox:checked+label.netabare01_label:hover:before {
+        opacity: 0;
+    }
+</style>
+<script>
+    function URL_OPEN(rink) {
+        window.location.href = rink; // 通常の遷移
+        window.open(rink, '_blank'); // 新しいタブを開き、ページを表示
+    }
+</script>
+
+<head>
+    <title>µgamerwiki</title>
+    <div id="headmain">
+        <h1>µgamerwiki</h1>
+        <h5 id="textmain">offered by Haduki</h5>
+    </div>
+    <div id="headmain"><a href="index.html">ホーム</a>　<a href="index_4.html">Tips集</a>
+    </div>
+</head>
+<script>
+    window.onload = function () {
+        //
+        var rating_100 = 1573;
+        document.getElementById("rating_100").textContent = "現在のレーティング取得率100%のときのµpoint:" + rating_100.toFixed(0) + "(Ver.1.9.8)";
+        document.getElementById("rating_tv").textContent = "現在のµpoint理論値:" + (rating_100 * 1.10).toFixed(0) + "(Ver.1.9.8)";
+        document.getElementById("rating_green").textContent = "緑レ:" + (rating_100 * 0.00).toFixed(0) + "(レーティング取得率0.00%)" + "~";
+        document.getElementById("rating_red").textContent = "赤レ:" + (rating_100 * 0.24).toFixed(0) + "(レーティング取得率24.00%)" + "~";
+        document.getElementById("rating_blue").textContent = "青レ:" + (rating_100 * 0.44).toFixed(0) + "(レーティング取得率44.00%)" + "~";
+        document.getElementById("rating_silver").textContent = "銀レ:" + (rating_100 * 0.64).toFixed(0) + "(レーティング取得率64.00%)" + "~";
+        document.getElementById("rating_gold").textContent = "金レ:" + (rating_100 * 0.82).toFixed(0) + "(レーティング取得率82.00%)" + "~";
+        document.getElementById("rating_rainbow").textContent = "虹レ:" + (rating_100 * 0.92).toFixed(0) + "(レーティング取得率92.00%)" + "~";
+        document.getElementById("rating_white").textContent = "白レ:" + ((rating_100 * 1.00) + 1).toFixed(0) + "(レーティング取得率" + (((rating_100 * 1.00) + 1) / ((rating_100 * 1.00)) * 100).toFixed(2) + "%)" + "~";
+        document.getElementById("rating_EX").textContent = "2)µpoint" + (rating_100 * 0.52).toFixed(0) + "以上(レーティング取得率52.00%以上)";
+    }
+</script>
+
+<body>
+    <br>
+    <div id="bodymain">
+        <h1>譜面定数表(通常譜面)</h1>
+        <a href="index_3.html">超高難易度譜面→</a>
+        <p id="rating_100">現在のレーティング取得率100%のときのµpoint:0(Ver.1.9.8)</p>
+        <input type="checkbox" class="netabare01_checkbox" id="bare01">
+        <label for="bare01" id="rating_tv" class="netabare01_label">
+            ここに伏せたい内容
+        </label>
+    </div><br>
+    <div>
+        <h1>Single</h1>
+        <p>解禁条件:最初から解禁</p>
+        <table border="1">
+            <tr>
+                <th>曲名</th>
+                <th>作詞者/作曲者</th>
+                <th bgcolor="#5AFF19">EAZY(/譜面定数)</th>
+                <th bgcolor="#0000ff" id="example">NOMAL(/譜面定数)</th>
+                <th bgcolor="#ffd900">HARD(/譜面定数)</th>
+                <th bgcolor="#ff0000" id="example">EXPERT(/譜面定数)</th>
+                <th bgcolor="#9932cc" id="example">ANOTHER(/譜面定数)</th>
+                <th>解禁方法</th>
+            </tr>
+            <tr>
+                <th>シャイニングスター</th>
+                <th>魔王魂/魔王魂</th>
+                <th bgcolor="#5AFF19">Lv.2/2.3</th>
+                <th bgcolor="#0000ff" id="example">Lv.5/5.1</th>
+                <th bgcolor="#ffd900">Lv.9/9.7</th>
+                <th bgcolor="#ff0000" id="example">Lv.13/13.1</th>
+                <th bgcolor="#9932cc" id="example">--</th>
+                <th>最初から解禁</th>
+            </tr>
+            <tr>
+                <th>ときめき☆ラビリンス</th>
+                <th>魔王魂/魔王魂</th>
+                <th bgcolor="#5AFF19">Lv.1/1.6</th>
+                <th bgcolor="#0000ff" id="example">--</th>
+                <th bgcolor="#ffd900">Lv.10/10.2</th>
+                <th bgcolor="#ff0000" id="example">Lv.14/14.7</th>
+                <th bgcolor="#9932cc" id="example">--</th>
+                <th>最初から解禁</th>
+            </tr>
+            <tr>
+                <th>空の宴</th>
+                <th>Haduki µsic/instVer</th>
+                <th bgcolor="#5AFF19">--</th>
+                <th bgcolor="#0000ff" id="example">--</th>
+                <th bgcolor="#ffd900">Lv.14/14.6</th>
+                <th bgcolor="#ff0000" id="example">Lv.17/17.4</th>
+                <th bgcolor="#9932cc" id="example">--</th>
+                <th>最初から解禁</th>
+            </tr>
+            <tr>
+                <th>もぺもぺ</th>
+                <th>LeaF/instVer</th>
+                <th bgcolor="#5AFF19">Lv.4/4.1</th>
+                <th bgcolor="#0000ff" id="example">Lv.7/7.1</th>
+                <th bgcolor="#ffd900">Lv.14/14.7</th>
+                <th bgcolor="#ff0000" id="example">Lv.18/18.8</th>
+                <th bgcolor="#9932cc" id="example">Lv.22/22.3</th>
+                <th>プレイヤーレベルを5に上げる</th>
+            </tr>
+            <tr>
+                <th>狂喜蘭舞</th>
+                <th>LeaF/instVer</th>
+                <th bgcolor="#5AFF19">--</th>
+                <th bgcolor="#0000ff" id="example">Lv.13/13.7</th>
+                <th bgcolor="#ffd900">Lv.16/16.8</th>
+                <th bgcolor="#ff0000" id="example">Lv.18/18.1</th>
+                <th bgcolor="#9932cc" id="example">Lv.21/21.3</th>
+                <th>プレイヤーレベルを5に上げる</th>
+            </tr>
+            <tr>
+                <th>いざ、参ります</th>
+                <th>U-ske/U-ske</th>
+                <th bgcolor="#5AFF19">--</th>
+                <th bgcolor="#0000ff" id="example">--</th>
+                <th bgcolor="#ffd900">Lv.15/15.5</th>
+                <th bgcolor="#ff0000" id="example">Lv.17/17.1</th>
+                <th bgcolor="#9932cc" id="example">--</th>
+                <th>プレイヤーレベルを5に上げる</th>
+            </tr>
+            <tr>
+                <th>命日</th>
+                <th>LeaF/instVer</th>
+                <th bgcolor="#5AFF19">Lv.1/1.1</th>
+                <th bgcolor="#0000ff" id="example">--</th>
+                <th bgcolor="#ffd900">Lv.15/15.8</th>
+                <th bgcolor="#ff0000" id="example">--</th>
+                <th bgcolor="#9932cc" id="example">--</th>
+                <th>プレイヤーレベルを5に上げる</th>
+            </tr>
+            <tr>
+                <th>Frail</th>
+                <th>紅月響/紅月響</th>
+                <th bgcolor="#5AFF19">--</th>
+                <th bgcolor="#0000ff" id="example">Lv.8/8.0</th>
+                <th bgcolor="#ffd900">Lv.16/16.2</th>
+                <th bgcolor="#ff0000" id="example">Lv.18/18.1</th>
+                <th bgcolor="#9932cc" id="example">--</th>
+                <th>プレイヤーレベルを5に上げる</th>
+            </tr>
+            <tr>
+                <th>迷宮リリス</th>
+                <th>ユメミド/instVer</th>
+                <th bgcolor="#5AFF19">Lv.4/4.0</th>
+                <th bgcolor="#0000ff" id="example">Lv.6/6.0</th>
+                <th bgcolor="#ffd900">--</th>
+                <th bgcolor="#ff0000" id="example">--</th>
+                <th bgcolor="#9932cc" id="example">--</th>
+                <th>プレイヤーレベルを5に上げる</th>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h1>第一章</h1>
+        <p>解禁条件:<strike>最初から解禁</strike>開発中です。今後のアップデートにご期待ください。</p>
+        <table border="1">
+            <tr>
+                <th>曲名</th>
+                <th>作詞者/作曲者</th>
+                <th bgcolor="#5AFF19">EAZY(/譜面定数)</th>
+                <th bgcolor="#0000ff" id="example">NOMAL(/譜面定数)</th>
+                <th bgcolor="#ffd900">HARD(/譜面定数)</th>
+                <th bgcolor="#ff0000" id="example">EXPERT(/譜面定数)</th>
+                <th bgcolor="#9932cc" id="example">ANOTHER(/譜面定数)</th>
+            </tr>
+            <tr>
+                <th>???</th>
+                <th>???/???</th>
+                <th bgcolor="#5AFF19">--</th>
+                <th bgcolor="#0000ff" id="example">--</th>
+                <th bgcolor="#ffd900">--</th>
+                <th bgcolor="#ff0000" id="example">--</th>
+                <th bgcolor="#9932cc" id="example">--</th>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h1>不思議な時計屋</h1>
+        <p>解禁条件:<strike>プレイヤーレベルを60に上げる</strike>開発中です。今後のアップデートにご期待ください。</p>
+        <table border="1">
+            <tr>
+                <th>曲名</th>
+                <th>作詞者/作曲者</th>
+                <th bgcolor="#5AFF19">EAZY(/譜面定数)</th>
+                <th bgcolor="#0000ff" id="example">NOMAL(/譜面定数)</th>
+                <th bgcolor="#ffd900">HARD(/譜面定数)</th>
+                <th bgcolor="#ff0000" id="example">EXPERT(/譜面定数)</th>
+                <th bgcolor="#9932cc" id="example">ANOTHER(/譜面定数)</th>
+            </tr>
+            <tr>
+                <th>???</th>
+                <th>???/???</th>
+                <th bgcolor="#5AFF19">--</th>
+                <th bgcolor="#0000ff" id="example">--</th>
+                <th bgcolor="#ffd900">--</th>
+                <th bgcolor="#ff0000" id="example">--</th>
+                <th bgcolor="#9932cc" id="example">--</th>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h1>Without Permission</h1>
+        <p>解禁条件:<strike>ストアからパックを購入</strike>開発中です。今後のアップデートにご期待ください。</p>
+        <table border="1">
+            <tr>
+                <th>曲名</th>
+                <th>作詞者/作曲者</th>
+                <th bgcolor="#5AFF19">EAZY(/譜面定数)</th>
+                <th bgcolor="#0000ff" id="example">NOMAL(/譜面定数)</th>
+                <th bgcolor="#ffd900">HARD(/譜面定数)</th>
+                <th bgcolor="#ff0000" id="example">EXPERT(/譜面定数)</th>
+                <th bgcolor="#9932cc" id="example">ANOTHER(/譜面定数)</th>
+            </tr>
+            <tr>
+                <th>Chartreuse Green</th>
+                <th>t+pazolite/instVer</th>
+                <th bgcolor="#5AFF19">--</th>
+                <th bgcolor="#0000ff" id="example">--</th>
+                <th bgcolor="#ffd900">Lv.?</th>
+                <th bgcolor="#ff0000" id="example">Lv.?</th>
+                <th bgcolor="#9932cc" id="example">--</th>
+            </tr>
+            <tr>
+                <th>Psyched Fevereiro</th>
+                <th>t+pazolite/instVer</th>
+                <th bgcolor="#5AFF19">--</th>
+                <th bgcolor="#0000ff" id="example">--</th>
+                <th bgcolor="#ffd900">Lv.?</th>
+                <th bgcolor="#ff0000" id="example">Lv.?</th>
+                <th bgcolor="#9932cc" id="example">--</th>
+            </tr>
+            <tr>
+                <th>Dogbite</th>
+                <th>t+pazolite/instVer</th>
+                <th bgcolor="#5AFF19">--</th>
+                <th bgcolor="#0000ff" id="example">--</th>
+                <th bgcolor="#ffd900">Lv.?</th>
+                <th bgcolor="#ff0000" id="example">Lv.?</th>
+                <th bgcolor="#9932cc" id="example">--</th>
+            </tr>
+            <tr>
+                <th>BPM=RT</th>
+                <th>t+pazolite/instVer</th>
+                <th bgcolor="#5AFF19">--</th>
+                <th bgcolor="#0000ff" id="example">--</th>
+                <th bgcolor="#ffd900">Lv.?</th>
+                <th bgcolor="#ff0000" id="example">Lv.?</th>
+                <th bgcolor="#9932cc" id="example">Lv.?</th>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

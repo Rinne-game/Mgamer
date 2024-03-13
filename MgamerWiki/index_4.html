@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body {
+        background-color: #ff9500;
+    }
+
+    #headmain {
+        width: 600px;
+        margin: 0 auto;
+        background-color: #ff9500;
+        padding: 0 20px 20px 20px;
+        border: 5px solid black;
+    }
+
+    #bodymain {
+        width: 600px;
+        margin: 0 auto;
+        background-color: #ff9500;
+        padding: 0 20px 20px 20px;
+        border: 5px solid black;
+    }
+
+    #textmain {
+        line-height: 10%;
+    }
+
+    #frame {
+        width: 600px;
+        margin: 0 auto;
+        background-color: #ff9500;
+        padding: 0 20px 20px 20px;
+        border: 5px solid black;
+    }
+
+    .btn--orange,
+    a.btn--orange {
+        color: #fff;
+        background-color: #eb6100;
+    }
+
+    .btn--orange:hover,
+    a.btn--orange:hover {
+        color: #fff;
+        background: #f56500;
+    }
+
+    #EX {
+        color: #a9ceec;
+    }
+
+    #EX1 {
+        color: #fd7e00;
+    }
+
+    #M {
+        color: #dab300;
+    }
+
+    input.netabare01_checkbox {
+        display: none;
+    }
+
+    label.netabare01_label {
+        display: inline;
+        position: relative;
+        background-color: #171717 !important;
+        color: #171717 !important;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    label.netabare01_label:before {
+        content: "クリックで内容を表示します";
+        display: block;
+        border: 1px solid #c70b0b;
+        font-size: 14px;
+        background-color: #ffeced;
+        color: #c70b0b;
+        position: absolute;
+        padding: 4px 10px;
+        z-index: 2;
+        right: 0;
+        left: 0;
+        bottom: calc(100% + 5px);
+        margin: auto;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        min-width: 200px;
+        text-align: center;
+        border-radius: 4px;
+        transition: 0.3s;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    label.netabare01_label:hover:before {
+        opacity: 1;
+    }
+
+    input.netabare01_checkbox:checked+label.netabare01_label {
+        color: #ffffff !important;
+    }
+
+    input.netabare01_checkbox:checked+label.netabare01_label:hover:before {
+        opacity: 0;
+    }
+
+    input.netabare02_checkbox {
+        display: none;
+    }
+
+    label.netabare02_label {
+        display: inline;
+        position: relative;
+        background-color: #171717 !important;
+        color: #171717 !important;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    label.netabare02_label:before {
+        content: "クリックで内容を表示します";
+        display: block;
+        border: 1px solid #c70b0b;
+        font-size: 14px;
+        background-color: #ffeced;
+        color: #c70b0b;
+        position: absolute;
+        padding: 4px 10px;
+        z-index: 2;
+        right: 0;
+        left: 0;
+        bottom: calc(100% + 5px);
+        margin: auto;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        min-width: 200px;
+        text-align: center;
+        border-radius: 4px;
+        transition: 0.3s;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    label.netabare02_label:hover:before {
+        opacity: 1;
+    }
+
+    input.netabare02_checkbox:checked+label.netabare01_label {
+        color: #ffffff !important;
+    }
+
+    input.netabare02_checkbox:checked+label.netabare01_label:hover:before {
+        opacity: 0;
+    }
+</style>
+<script>
+    window.onload = function () {
+        //
+        var rating_100 = 1573;
+        document.getElementById("rating_100").textContent = "現在のレーティング取得率100%のときのµpoint:" + rating_100.toFixed(0) + "(Ver.1.9.8)";
+        document.getElementById("rating_tv").textContent = "現在のµpoint理論値:" + (rating_100 * 1.10).toFixed(0) + "(Ver.1.9.8)";
+        document.getElementById("rating_green").textContent = "緑レ:" + (rating_100 * 0.00).toFixed(0) + "(レーティング取得率0.00%)" + "~";
+        document.getElementById("rating_red").textContent = "赤レ:" + (rating_100 * 0.24).toFixed(0) + "(レーティング取得率24.00%)" + "~";
+        document.getElementById("rating_blue").textContent = "青レ:" + (rating_100 * 0.44).toFixed(0) + "(レーティング取得率44.00%)" + "~";
+        document.getElementById("rating_silver").textContent = "銀レ:" + (rating_100 * 0.64).toFixed(0) + "(レーティング取得率64.00%)" + "~";
+        document.getElementById("rating_gold").textContent = "金レ:" + (rating_100 * 0.82).toFixed(0) + "(レーティング取得率82.00%)" + "~";
+        document.getElementById("rating_rainbow").textContent = "虹レ:" + (rating_100 * 0.92).toFixed(0) + "(レーティング取得率92.00%)" + "~";
+        document.getElementById("rating_white").textContent = "白レ:" + ((rating_100 * 1.00) + 1).toFixed(0) + "(レーティング取得率" + (((rating_100 * 1.00) + 1) / ((rating_100 * 1.00)) * 100).toFixed(2) + "%)" + "~";
+        document.getElementById("rating_EX").textContent = "2)µpoint" + (rating_100 * 0.52).toFixed(0) + "以上(レーティング取得率52.00%以上)";
+    }
+</script>
+
+<head>
+    <div id="headmain">
+        <title>µgamerwiki</title>
+        <h1>µgamerwiki</h1>
+        <h5 id="textmain">offered by Haduki</h5>
+    </div>
+    <div id="headmain">
+        <a href="index.html">ホーム</a>　<a href="index_2.html">譜面定数表</a>
+    </div>
+</head>
+
+<body>
+    <br>
+    <div id="bodymain">
+        <h2>Tips集</h2>
+        <h2>EXPERTの解禁要件</h2>
+        <p>1または2のどちらかを達成する必要がある。</p>
+        <p>1)難易度HARDで,スコア860000点以上取得</p>
+        <p id="rating_EX">2)µpoint0以上(レーティング取得率52.00%以上)</p>
+        <h2>ANOTHERの解禁要件</h2>
+        <p>曲によって異なる。</p>
+        <table border="1">
+            <tr>
+                <th>番号</th>
+                <th>解禁条件</th>
+                <th>該当楽曲</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>難易度EXPERTでスコア900000点以上取得</th>
+                <th>以下に該当しない曲</th>
+            </tr>
+            <tr>
+                <th>2</th>
+                <th>裏　コ　マ　ン　ド</th>
+                <th>もぺもぺ</th>
+            </tr>
+            <tr>
+                <th>3</th>
+                <th>チャレンジステージで開放</th>
+                <th>なし</th>
+            </tr>
+        </table>
+        <h2>判定幅</h2>
+        <table border="1">
+            <tr>
+                <th>判定</th>
+                <th>判定幅(通常)</th>
+                <th>判定幅(ハードジャッジ使用)</th>
+            </tr>
+            <tr>
+                <th>PERFECT</th>
+                <th>25</th>
+                <th>10</th>
+            </tr>
+            <tr>
+                <th>BRILLINAT</th>
+                <th>55</th>
+                <th>25</th>
+            </tr>
+            <tr>
+                <th>GREAT</th>
+                <th>130</th>
+                <th>45</th>
+            </tr>
+            <tr>
+                <th>BAD</th>
+                <th>150</th>
+                <th>150</th>
+            </tr>
+        </table>
+        <h2>ランク</h2>
+        <table border="1">
+            <tr>
+                <th>ランク</th>
+                <th>スコア</th>
+            </tr>
+            <tr>
+                <th bgcolor="#ffffff"><span id="M">µ</span></th>
+                <th bgcolor="#ffffff"><span id="M">1010000(理論値)</span></th>
+            </tr>
+            <tr>
+                <th bgcolor="#ffffff"><span id="EX1">EX+</span></th>
+                <th bgcolor="#ffffff"><span id="EX1">ブリリアントコンボ(点数は関与しない)</span></th>
+            </tr>
+            <tr>
+                <th bgcolor="#ffffff"><span id="EX">EX</span></th>
+                <th bgcolor="#ffffff"><span id="EX">フルコンボ(点数は関与しない)</span></th>
+            </tr>
+            <tr>
+                <th>SSS+</th>
+                <th>1005000</th>
+            </tr>
+            <tr>
+                <th>SSS</th>
+                <th>1000000</th>
+            </tr>
+            <tr>
+                <th>SS+</th>
+                <th>980000</th>
+            </tr>
+            <tr>
+                <th>SS</th>
+                <th>950000</th>
+            </tr>
+            <tr>
+                <th>S+</th>
+                <th>910000</th>
+            </tr>
+            <tr>
+                <th>S+</th>
+                <th>880000</th>
+            </tr>
+            <tr>
+                <th>A+</th>
+                <th>880000</th>
+            </tr>
+            <tr>
+                <th>A</th>
+                <th>860000</th>
+            </tr>
+            <tr>
+                <th>B+</th>
+                <th>810000</th>
+            </tr>
+            <tr>
+                <th>B</th>
+                <th>750000</th>
+            </tr>
+            <tr>
+                <th>C+</th>
+                <th>700000</th>
+            </tr>
+            <tr>
+                <th>C</th>
+                <th>650000</th>
+            </tr>
+            <tr>
+                <th>D/F(INFINITY)</th>
+                <th>600000</th>
+            </tr>
+            <tr>
+                <th>F</th>
+                <th>ゲージ0(点数は関与しない)</th>
+            </tr>
+        </table>
+        <p>SSS,SSS+は、SSの点数調整後、製作者が足りないと考え、追加した。</p>
+        <h2>レーティングカラー</h2>
+        <p>レートの色は、レーティングの数ではなく、レーティング取得率で設定している。<br>計算方法:今のµpoint/レーティング取得率100.00%のときのµpoint</p>
+        <p id="rating_100">現在のレーティング取得率100%のときのµpoint:0(Ver.1.9.8)</p>
+        <input type="checkbox" class="netabare01_checkbox" id="bare01">
+        <label for="bare01" id="rating_tv" class="netabare01_label">
+            ここに伏せたい内容
+        </label>
+        <p id="rating_green">緑レ:0</p>
+        <p id="rating_red">赤レ:0</p>
+        <p id="rating_blue">青レ:0</p>
+        <p id="rating_silver">銀レ:0</p>
+        <p id="rating_gold">金レ:0</p>
+        <p id="rating_rainbow">虹レ:0</p>
+        <input type="checkbox" class="netabare01_checkbox" id="bare02">
+        <label for="bare02" id="rating_white" class="netabare01_label">
+            ここに伏せたい内容
+        </label>
+    </div>
+</body>
+
+</html>
